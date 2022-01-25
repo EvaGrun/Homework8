@@ -5,28 +5,6 @@ namespace Homework8._2
 {
     class Program
     {
-        /// <summary>
-        /// Метод для заполнения телефонной книги
-        /// </summary>
-        /// <param name="phoneBook">коллекция, которую надо заполнить</param>
-        static void AddInfo(Dictionary<string, string> phoneBook)
-        {
-            string phoneNum;
-            string name;
-
-            for (; ; )
-            {
-                Console.WriteLine("Введите номер телефона");
-                phoneNum = Console.ReadLine();
-                if (phoneNum == "") break;
-
-                Console.WriteLine("Введите имя человека, которому этот номер принадлежит");
-                name = Console.ReadLine();
-                if (name == "") break;
-
-                phoneBook.Add(phoneNum, name);
-            }
-        }
 
         /// <summary>
         /// Метод для вывода имени владельца по номеру телефона
@@ -51,7 +29,22 @@ namespace Homework8._2
             {
                 Dictionary<string, string> phoneBook = new Dictionary<string, string>();
 
-                AddInfo(phoneBook);
+                string phoneNum;
+                string name;
+
+                for (; ; )
+                {
+                    Console.WriteLine("Введите номер телефона");
+                    phoneNum = Console.ReadLine();
+                    if (phoneNum == "") break;
+
+                    Console.WriteLine("Введите имя человека, которому этот номер принадлежит");
+                    name = Console.ReadLine();
+                    if (name == "") break;
+
+                    phoneBook.Add(phoneNum, name);
+                }
+
 
                 Console.WriteLine("Введите номер, владельца которого надо найти");
                 string key = Console.ReadLine();
